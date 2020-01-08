@@ -10,7 +10,7 @@ def run():
     html = request1.makeRequest()
 
     reader = Reader()
-    reader.feed(5)
+    reader.feed(html)
     metrics = reader.get_metrics()
 
     output_formatter = DictOutputFormatter(metrics)

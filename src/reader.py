@@ -26,8 +26,9 @@ class Reader(HTMLParser):
         most_commons = elements.most_common(5)
         top_five = {}
 
-        for i, v in most_commons:
-            top_five[i] = v
+        if len(most_commons) != 0:
+            for i, v in most_commons:
+                top_five[i] = v
 
         metrics = {
             'total_elements': self._total_tags,
