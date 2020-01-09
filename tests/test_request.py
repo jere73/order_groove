@@ -10,8 +10,8 @@ class TestRequest(unittest.TestCase):
         # Assume
         url = 'https://www.ole.com.ar/river-plate/'
         # Action
-        request = Request(url)
-        result = request.makeRequest()
+        request = Request()
+        result = request.makeRequest(url)
         # Assert
         self.assertIsInstance(result, str)
 
@@ -19,10 +19,10 @@ class TestRequest(unittest.TestCase):
         # Assume
         url = 'http:://badurl..com'
         # Action
-        request = Request(url)
+        request = Request()
         # Assert
         with self.assertRaises(urllib2.URLError):
-            request.makeRequest()
+            request.makeRequest(url)
 
 
 if __name__ == '__main__':

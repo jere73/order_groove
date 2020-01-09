@@ -10,10 +10,12 @@ class DictOutputFormatter:
     def toConsole(self):
 
         if self.dict['total_elements'] != 0:
+
             print('HTML Elements in web page are {}'.format(self.dict['total_elements']))
             print('The top five most used elements are ')
-            for i, v in self.dict['top_five'].iteritems():
-                print(str(i) + ' => ' + str(v))
+
+            for i in self.dict['top_five']:
+                print(i)
         else:
             print('NO elements.')
 
